@@ -42,7 +42,7 @@ class TypeMenuController extends Controller
     }
 
 
-    public function postUpdate(TypeMenu $typeMenu, Request $request)
+    public function postUpdate(TypeMenu $typeMenu, TypeMenuRequest $request)
     {
 
         $this->typeMenuService->update($typeMenu->id, $request);

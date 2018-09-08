@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Enterprise\Menu;
 use App\Models\Enterprise\TypeMenu;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -30,6 +31,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('typeMenu', TypeMenu::class);
+        Route::model('typeMenu', Menu::class);
     }
 
     /**

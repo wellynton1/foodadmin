@@ -19,3 +19,13 @@
 
     });
 
+    Route::prefix('cardapio')->group(function (){
+
+        Route::get('novo', 'MenuController@getCreate')->name('enterprise.menu.create.get');
+        Route::post('novo', 'MenuController@postCreate')->name('enterprise.menu.create.post');
+        Route::get('lista', 'MenuController@getList')->name('enterprise.menu.list.get');
+        Route::get('editar/{menu}', 'MenuController@getUpdate')->name('enterprise.menu.update.get');
+        Route::post('editar/{menu}', 'MenuController@postUpdate')->name('enterprise.menu.update.post');
+
+    });
+
