@@ -1,4 +1,4 @@
-<div class="m-portlet  {{$cor}}">
+<div class="m-portlet  {{$cor or null}}">
     <div class="m-portlet__head">
         <div class="m-portlet__head-caption">
             <div class="m-portlet__head-title">
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="m-portlet__head-tools">
-            {{$acoes or null}}
+            {{$action or null}}
 
         </div>
     </div>
