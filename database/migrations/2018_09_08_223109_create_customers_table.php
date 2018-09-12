@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenusTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->longText('description');
-            $table->integer('value_caloric');
-            $table->unsignedInteger('id_type_menu');
-            $table->foreign('id_type_menu')->references('id')->on('type_menus');
-            $table->unsignedInteger('id_status_menu');
-            $table->foreign('id_status_menu')->references('id')->on('status_menus');
+            $table->string('nickname')->nullable();
+            $table->string('cpf')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->unsignedInteger('id_user_customer');
+            $table->foreign('id_user_customer')->references('id')->on('users');
             $table->boolean('active');
             $table->unsignedInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
@@ -37,6 +36,6 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('customers');
     }
 }

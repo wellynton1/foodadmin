@@ -16,6 +16,10 @@ class CreateStatusMenusTable extends Migration
         Schema::create('status_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('active');
+            $table->unsignedInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

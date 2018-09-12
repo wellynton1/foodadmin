@@ -16,6 +16,10 @@ class CreateTypeMenusTable extends Migration
         Schema::create('type_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('active');
+            $table->unsignedInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }
