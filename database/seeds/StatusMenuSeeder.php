@@ -13,8 +13,8 @@ class StatusMenuSeeder extends Seeder
     {
         DB::table('status_menus')->insert([
 
-            1 => ['name' => 'Status 1'],
-            2 => ['name' => 'Status 2']
+            1 => ['name' => 'Status 1', 'active' => 1, 'created_by' => 1],
+            2 => ['name' => 'Status 2', 'active' => 1, 'created_by' => 1]
 
         ]);
     }

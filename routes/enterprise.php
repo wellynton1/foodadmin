@@ -29,3 +29,13 @@
 
     });
 
+    Route::prefix('insumo')->group(function (){
+
+        Route::get('novo', 'FeedstockController@getCreate')->name('enterprise.feedstock.create.get');
+        Route::post('novo', 'FeedstockController@postCreate')->name('enterprise.feedstock.create.post');
+        Route::get('lista', 'FeedstockController@getList')->name('enterprise.feedstock.list.get');
+        Route::get('editar/{feedstock}', 'FeedstockController@getUpdate')->name('enterprise.feedstock.update.get');
+        Route::post('editar/{feedstock}', 'FeedstockController@postUpdate')->name('enterprise.feedstock.update.post');
+
+    });
+

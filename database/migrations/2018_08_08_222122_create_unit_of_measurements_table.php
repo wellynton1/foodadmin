@@ -16,6 +16,7 @@ class CreateUnitOfMeasurementsTable extends Migration
         Schema::create('unit_of_measurements', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('active');
             $table->unsignedInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');
             $table->integer('updated_by')->nullable();
