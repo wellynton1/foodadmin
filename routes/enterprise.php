@@ -39,3 +39,14 @@
 
     });
 
+
+    Route::prefix('cliente')->group(function (){
+
+        Route::get('novo', 'CustomerController@getCreate')->name('enterprise.customer.create.get');
+        Route::post('novo', 'CustomerController@postCreate')->name('enterprise.customer.create.post');
+        Route::get('lista', 'CustomerController@getList')->name('enterprise.customer.list.get');
+        Route::get('editar/{customer}', 'CustomerController@getUpdate')->name('enterprise.customer.update.get');
+        Route::post('editar/{customer}', 'CustomerController@postUpdate')->name('enterprise.customer.update.post');
+
+    });
+

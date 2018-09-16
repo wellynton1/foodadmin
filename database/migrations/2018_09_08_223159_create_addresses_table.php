@@ -18,6 +18,7 @@ class CreateAddressesTable extends Migration
             $table->string('street');
             $table->string('district');
             $table->string('cep');
+            $table->string('id_city')->nullable();
             $table->string('complement')->nullable();
             $table->string('reference_point')->nullable();
             $table->boolean('active');

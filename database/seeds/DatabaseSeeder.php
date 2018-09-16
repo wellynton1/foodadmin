@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(StatusMenuSeeder::class);
          $this->call(UnitOfMeasurementSeeder::class);
+         $this->call(StateSeeder::class);
+         $this->call(CitySeeder::class);
     }
 }

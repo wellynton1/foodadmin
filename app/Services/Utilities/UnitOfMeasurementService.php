@@ -6,7 +6,7 @@
  * Time: 09:07
  */
 
-namespace App\Services\Enterprise;
+namespace App\Services\Utilities;
 
 
 use App\Models\Utilities\UnitOfMeasurement;

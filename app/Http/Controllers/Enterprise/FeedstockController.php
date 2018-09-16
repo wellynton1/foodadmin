@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Enterprise;
 
 use App\Http\Requests\Enterprise\FeedstockRequest;
 use App\Models\Enterprise\Feedstock;
-use App\Models\Utilities\UnitOfMeasurement;
 use App\Services\Enterprise\FeedstockService;
-use App\Services\Enterprise\UnitOfMeasurementService;
+use App\Services\Utilities\UnitOfMeasurementService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
