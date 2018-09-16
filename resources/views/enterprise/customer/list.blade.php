@@ -51,6 +51,7 @@
                 <th><center>CPF</center></th>
                 <th><center>Whatsapp</center></th>
                 <th><center>Telefone</center></th>
+                <th><center>Endereço</center></th>
                 <td><center>Editar</center></td>
             </tr>
             </thead>
@@ -64,6 +65,7 @@
                     <td><center>{{$customer->cpf}}</center></td>
                     <td><center>{{$customer->whatsapp}}</center></td>
                     <td><center>{{$customer->phone}}</center></td>
+                    <td><center><a class="btn blue-soft" href="{{route('enterprise.customer.address.get', $customer->id)}}"><i class="flaticon-map-location" aria-hidden="true"></i></a></center></td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.customer.update.get', $customer->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>
                 </tr>
             @endforeach

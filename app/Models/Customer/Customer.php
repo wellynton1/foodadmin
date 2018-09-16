@@ -31,9 +31,15 @@ class Customer extends Model
         'active'
     ];
 
-    public function user(){
+    public function user()
+    {
 
         return $this->hasOne(User::class, 'id', 'id_user_customer');
 
+    }
+
+    public function addressesCustomer()
+    {
+        return $this->hasMany(CustomerAddress::class, 'id_customer', 'id');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models\Customer;
 
+use App\Models\Utilities\Address;
 use Illuminate\Database\Eloquent\Model;
 
 class CustomerAddress extends Model
@@ -27,4 +28,10 @@ class CustomerAddress extends Model
         'id_address',
         'active'
     ];
+
+
+    public function address()
+    {
+        return $this->hasOne(Address::class, 'id', 'id_address');
+    }
 }

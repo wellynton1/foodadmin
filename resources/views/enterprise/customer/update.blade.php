@@ -46,13 +46,13 @@
             </div>
             <div class="col-lg-4">
                 <label for="">Telefone</label>
-                {{Form::text('phone', $customer->phone, array('class' => 'form-control'))}}
+                {{Form::text('phone', $customer->phone, array('class' => 'form-control', 'id' => 'phone'))}}
 
             </div>
 
             <div class="col-lg-4">
                 <label for="">Whatsapp</label>
-                {{Form::text('whatsapp', $customer->whatsapp, array('class' => 'form-control'))}}
+                {{Form::text('whatsapp', $customer->whatsapp, array('class' => 'form-control', 'id' => 'whatsapp'))}}
 
             </div>
 
@@ -73,5 +73,33 @@
 
 
     @endcomponent
+
+@endsection
+
+@section('js')
+
+    {!!  Html::script('plugins/jquery-inputmask/jquery.inputmask.bundle.min.js')!!}
+
+    <script>
+
+
+    $("#phone").inputmask("(99)9999-9999", {
+    autoUnmask: true,
+    placeholder:''
+    });
+
+
+    $("#whatsapp").inputmask("(99)99999-9999", {
+    autoUnmask: true,
+    placeholder:''
+    });
+
+    $("#cpf").inputmask("999.999.999-99", {
+    autoUnmask: true,
+    placeholder:''
+    });
+
+    </script>
+
 
 @endsection

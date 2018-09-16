@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Enterprise;
 
 use App\Http\Requests\Enterprise\CustomerRequest;
 use App\Http\Requests\Enterprise\CustomerUpdateRequest;
+use App\Http\Requests\Utilities\AddressRequest;
 use App\Models\Customer\Customer;
 use App\Services\Customer\CustomerAdressService;
 use App\Services\Customer\CustomerService;
@@ -103,5 +104,53 @@ class CustomerController extends Controller
         return view('enterprise.customer.list', compact('customers'));
 
     }
+
+
+    public function getAddress(Customer $customer)
+    {
+
+        return view('enterprise.customer.address.addressList', compact('customer'));
+
+    }
+
+    public function getAddressEdit($id)
+    {
+        $data = $this->customerAdressService->get();
+
+        $customerAddress = $data->find($id);
+
+        return view('enterprise.customer.address.addressEdit', compact('customerAddress'));
+    }
+    public function postAddressEdit(AddressRequest $request, $id)
+    {
+
+       $this->adressService->update($id, $request->only(['street', 'district', 'cep', 'complement', 'reference_point']));
+
+       return redirect()->route('enterprise.customer.list.get')->with(['status' => 'Endereço cliente editado com sucesso!']);
+
+    }
+
+    public function getAddressNew(Customer $customer)
+    {
+
+        return view('enterprise.customer.address.addressNew', compact('customer'));
+
+    }
+
+    public function postAddressNew(AddressRequest $request, Customer $customer)
+    {
+
+        $adress = $this->adressService->create($request->only(['street', 'district', 'cep', 'complement', 'reference_point']));
+
+        $request->merge(['id_customer' => $customer->id, 'id_address' => $adress->id]);
+
+        $this->customerAdressService->create($request->only(['id_customer', 'id_address']));
+
+
+        return redirect()->route('enterprise.customer.list.get')->with(['status' => 'Endereço cliente cadastrado com sucesso!']);
+
+    }
+
+
 
 }
