@@ -58,11 +58,11 @@
                         </a>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true">
-                        <a href="{{route('enterprise.feedstock.list.get')}}" class="m-menu__link ">
+                        <a href="{{route('enterprise.brand.list.get')}}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>
-                            <span class="m-menu__link-text">Marcas</span>
+                            <span class="m-menu__link-text">Marca</span>
                         </a>
                     </li>
                 </ul>

@@ -49,6 +49,16 @@
 
     });
 
+    Route::prefix('marca')->group(function (){
+
+        Route::get('novo', 'BrandController@getCreate')->name('enterprise.brand.create.get');
+        Route::post('novo', 'BrandController@postCreate')->name('enterprise.brand.create.post');
+        Route::get('lista', 'BrandController@getList')->name('enterprise.brand.list.get');
+        Route::get('editar/{brand}', 'BrandController@getUpdate')->name('enterprise.brand.update.get');
+        Route::post('editar/{brand}', 'BrandController@postUpdate')->name('enterprise.brand.update.post');
+
+    });
+
 
     Route::prefix('cliente')->group(function (){
 
