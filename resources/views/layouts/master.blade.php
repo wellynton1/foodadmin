@@ -6,7 +6,7 @@
 <!-- begin::Head -->
 <head>
     <meta charset="utf-8" />
-    <title>Intranet | @yield('titulo')</title>
+    <title>SAI | @yield('titulo')</title>
     <meta name="description" content="Metronic stack layouts">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 

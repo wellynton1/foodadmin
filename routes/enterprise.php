@@ -39,6 +39,16 @@
 
     });
 
+    Route::prefix('fornecedor')->group(function (){
+
+        Route::get('novo', 'SupplierController@getCreate')->name('enterprise.supplier.create.get');
+        Route::post('novo', 'SupplierController@postCreate')->name('enterprise.supplier.create.post');
+        Route::get('lista', 'SupplierController@getList')->name('enterprise.supplier.list.get');
+        Route::get('editar/{supplier}', 'SupplierController@getUpdate')->name('enterprise.supplier.update.get');
+        Route::post('editar/{supplier}', 'SupplierController@postUpdate')->name('enterprise.supplier.update.post');
+
+    });
+
 
     Route::prefix('cliente')->group(function (){
 
