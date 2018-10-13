@@ -18,10 +18,10 @@ class CreateMenusTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->integer('value_caloric');
-            $table->unsignedInteger('id_type_menu');
-            $table->foreign('id_type_menu')->references('id')->on('type_menus');
-            $table->unsignedInteger('id_status_menu');
-            $table->foreign('id_status_menu')->references('id')->on('status_menus');
+            $table->unsignedInteger('type_menu_id');
+            $table->foreign('type_menu_id')->references('id')->on('type_menus');
+            $table->unsignedInteger('status_menu_id');
+            $table->foreign('status_menu_id')->references('id')->on('status_menus');
             $table->boolean('active');
             $table->unsignedInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');

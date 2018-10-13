@@ -15,8 +15,8 @@ class CreateStockOutputFeedstocksTable extends Migration
     {
         Schema::create('stock_output_feedstocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_feedstock');
-            $table->foreign('id_feedstock')->references('id')->on('feedstocks');
+            $table->unsignedInteger('feedstock_id');
+            $table->foreign('feedstock_id')->references('id')->on('feedstocks');
             $table->integer('output_quantity');
             $table->boolean('active');
             $table->unsignedInteger('created_by');

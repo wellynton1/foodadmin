@@ -25,12 +25,12 @@
         <div class="form-group m-form__group row">
             <div class="col-lg-6">
                 <label for="">Estoque mínimo</label>
-                {{Form::text('minimum_stock', null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
+                {{Form::text('minimum_stock', null, array('class' => 'form-control', 'placeholder' => ''))}}
             </div>
 
             <div class="col-lg-6">
                 <label for="">Unidade de medida</label>
-                {{Form::select('id_unit_of_measurement', $unitMeasurements, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
+                {{Form::select('unit_of_measurement_id', $unitMeasurements, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
 
             </div>
         </div>

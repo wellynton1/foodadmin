@@ -9,6 +9,7 @@ class LoginController extends Controller
 {
     public function postLogin(LoginRequest $request)
     {
+
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'active' => 1])) {
 
             return redirect()->intended('/');

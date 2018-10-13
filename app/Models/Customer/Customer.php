@@ -27,19 +27,19 @@ class Customer extends Model
         'cpf',
         'phone',
         'whatsapp',
-        'id_user_customer',
+        'user_id',
         'active'
     ];
 
     public function user()
     {
 
-        return $this->hasOne(User::class, 'id', 'id_user_customer');
+        return $this->belongsTo(User::class);
 
     }
 
     public function addressesCustomer()
     {
-        return $this->hasMany(CustomerAddress::class, 'id_customer', 'id');
+        return $this->hasMany(CustomerAddress::class);
     }
 }

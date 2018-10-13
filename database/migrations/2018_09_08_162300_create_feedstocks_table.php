@@ -18,8 +18,8 @@ class CreateFeedstocksTable extends Migration
             $table->string('name');
             $table->integer('current_stock')->nullable();
             $table->integer('minimum_stock')->nullable();
-            $table->unsignedInteger('id_unit_of_measurement');
-            $table->foreign('id_unit_of_measurement')->references('id')->on('unit_of_measurements');
+            $table->unsignedInteger('unit_of_measurement_id');
+            $table->foreign('unit_of_measurement_id')->references('id')->on('unit_of_measurements');
             $table->boolean('active');
             $table->unsignedInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');

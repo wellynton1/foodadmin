@@ -68,7 +68,7 @@
         Route::get('editar/{customer}', 'CustomerController@getUpdate')->name('enterprise.customer.update.get');
         Route::post('editar/{customer}', 'CustomerController@postUpdate')->name('enterprise.customer.update.post');
         Route::get('endereco/lista/{customer}', 'CustomerController@getAddress')->name('enterprise.customer.address.get');
-        Route::post('endereco/{customer}', 'CustomerController@postAddress')->name('enterprise.customer.address.post');
+//        Route::post('endereco/{customer}', 'CustomerController@postAddress')->name('enterprise.customer.address.post');
         Route::get('endereco/editar/{id}', 'CustomerController@getAddressEdit')->name('enterprise.customer.address.edit.get');
         Route::post('endereco/editar/{id}', 'CustomerController@postAddressEdit')->name('enterprise.customer.address.edit.post');
         Route::get('endereco/novo/{customer}', 'CustomerController@getAddressNew')->name('enterprise.customer.address.new.get');

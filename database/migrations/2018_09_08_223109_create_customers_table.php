@@ -19,8 +19,8 @@ class CreateCustomersTable extends Migration
             $table->string('cpf')->nullable();
             $table->string('phone')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->unsignedInteger('id_user_customer');
-            $table->foreign('id_user_customer')->references('id')->on('users');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('active');
             $table->unsignedInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');

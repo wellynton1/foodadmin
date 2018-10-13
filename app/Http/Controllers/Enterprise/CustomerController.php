@@ -46,20 +46,20 @@ class CustomerController extends Controller
 
             $user = $this->userService->create($request->only(['name', 'email', 'password', 'active']));
 
-            $request->merge(['id_user_customer' => $user->id]);
+            $request->merge(['user_id' => $user->id]);
 
             $adress = $this->adressService->create($request->only(['street', 'district', 'cep', 'complement', 'reference_point']));
 
-            $request->merge(['id_address' => $adress->id]);
+            $request->merge(['address_id' => $adress->id]);
 
-            $customer = $this->customerService->create($request->only(['nickname', 'cpf', 'phone', 'whatsapp', 'id_user_customer']));
+            $customer = $this->customerService->create($request->only(['nickname', 'cpf', 'phone', 'whatsapp', 'user_id']));
 
-            $request->merge(['id_customer' => $customer->id]);
+            $request->merge(['customer_id' => $customer->id]);
 
-            $this->customerAdressService->create($request->only(['id_customer', 'id_address']));
+            $this->customerAdressService->create($request->only(['customer_id', 'address_id']));
         });
 
-        return redirect()->route('enterprise.customer.list.get')->with(['status' => 'Tipo cardápio cadastrado com sucesso!']);
+        return redirect()->route('enterprise.customer.list.get')->with(['status' => 'Cliente cadastrado com sucesso!']);
 
     }
 
@@ -142,9 +142,9 @@ class CustomerController extends Controller
 
         $adress = $this->adressService->create($request->only(['street', 'district', 'cep', 'complement', 'reference_point']));
 
-        $request->merge(['id_customer' => $customer->id, 'id_address' => $adress->id]);
+        $request->merge(['customer_id' => $customer->id, 'address_id' => $adress->id]);
 
-        $this->customerAdressService->create($request->only(['id_customer', 'id_address']));
+        $this->customerAdressService->create($request->only(['customer_id', 'address_id']));
 
 
         return redirect()->route('enterprise.customer.list.get')->with(['status' => 'Endereço cliente cadastrado com sucesso!']);

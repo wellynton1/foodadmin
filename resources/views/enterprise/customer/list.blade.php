@@ -38,7 +38,7 @@
 
         @slot('action')
 
-            <a class="btn white btn-outline btn blue-soft" href="{{route('enterprise.feedstock.create.get')}}">
+            <a class="btn white btn-outline btn blue-soft" href="{{route('enterprise.customer.create.get')}}">
                 &nbsp;Cadastrar</a>
 
         @endslot

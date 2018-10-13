@@ -15,10 +15,10 @@ class CreateCustomerAddressesTable extends Migration
     {
         Schema::create('customer_addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_customer');
-            $table->foreign('id_customer')->references('id')->on('customers');
-            $table->unsignedInteger('id_address');
-            $table->foreign('id_address')->references('id')->on('addresses');
+            $table->unsignedInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->unsignedInteger('address_id');
+            $table->foreign('address_id')->references('id')->on('addresses');
             $table->boolean('active');
             $table->unsignedInteger('created_by');
             $table->foreign('created_by')->references('id')->on('users');

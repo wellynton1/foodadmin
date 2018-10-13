@@ -26,7 +26,7 @@ class FeedstockRequest extends FormRequest
         return [
             'name' => 'required',
             'minimum_stock' => 'required|numeric',
-            'id_unit_of_measurement' => 'required'
+            'unit_of_measurement_id' => 'required'
         ];
     }
 
@@ -36,7 +36,7 @@ class FeedstockRequest extends FormRequest
             'name.required' => 'O campo nome é obrigatório!',
             'minimum_stock.numeric' => 'O campo estoque mínimo deve conter um valor numérico!',
             'minimum_stock.required' => 'O campo estoque mínimo é obrigatório!',
-            'id_unit_of_measurement.required' => 'O campo unidade de medida é obrigatório!',
+            'unit_of_measurement_id.required' => 'O campo unidade de medida é obrigatório!',
         ];
     }
 }

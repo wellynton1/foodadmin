@@ -15,14 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_menu');
-            $table->foreign('id_menu')->references('id')->on('menus');
-            $table->unsignedInteger('id_customer');
-            $table->foreign('id_customer')->references('id')->on('customers');
-            $table->unsignedInteger('id_customer_address');
-            $table->foreign('id_customer_address')->references('id')->on('customer_addresses');
-            $table->unsignedInteger('id_status_order');
-            $table->foreign('id_status_order')->references('id')->on('status_orders');
+            $table->unsignedInteger('menu_id');
+            $table->foreign('menu_id')->references('id')->on('menus');
+            $table->unsignedInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->unsignedInteger('customer_address_id');
+            $table->foreign('customer_address_id')->references('id')->on('customer_addresses');
+            $table->unsignedInteger('status_order_id');
+            $table->foreign('status_order_id')->references('id')->on('status_orders');
             $table->time('delivery_schedule');
             $table->boolean('active');
             $table->unsignedInteger('created_by');

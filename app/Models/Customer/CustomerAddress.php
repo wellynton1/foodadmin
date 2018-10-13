@@ -24,14 +24,14 @@ class CustomerAddress extends Model
     }
 
     protected $fillable = [
-        'id_customer',
-        'id_address',
+        'customer_id',
+        'address_id',
         'active'
     ];
 
 
     public function address()
     {
-        return $this->hasOne(Address::class, 'id', 'id_address');
+        return $this->belongsTo(Address::class);
     }
 }

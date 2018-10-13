@@ -15,10 +15,10 @@ class CreateOrderFeedstocksTable extends Migration
     {
         Schema::create('order_feedstocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_order');
-            $table->foreign('id_order')->references('id')->on('orders');
-            $table->unsignedInteger('id_feedstock');
-            $table->foreign('id_feedstock')->references('id')->on('feedstocks');
+            $table->unsignedInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->unsignedInteger('feedstock_id');
+            $table->foreign('feedstock_id')->references('id')->on('feedstocks');
             $table->integer('quantity');
             $table->boolean('active');
             $table->unsignedInteger('created_by');

@@ -26,12 +26,12 @@ class Feedstock extends Model
         'name',
         'current_stock',
         'minimum_stock',
-        'id_unit_of_measurement',
+        'unit_of_measurement_id',
         'active',
     ];
 
     public function unitOfMeasurement()
     {
-        return $this->hasOne(UnitOfMeasurement::class, 'id', 'id_unit_of_measurement');
+        return $this->belongsTo(UnitOfMeasurement::class);
     }
 }

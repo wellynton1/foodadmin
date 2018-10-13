@@ -35,7 +35,7 @@ class Menu extends Model
 
     public function type()
     {
-        return $this->hasOne(TypeMenu::class,'id', 'id_type_menu');
+        return $this->belongsTo(TypeMenu::class);
     }
 
 }
