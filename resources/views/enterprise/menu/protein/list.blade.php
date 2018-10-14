@@ -3,7 +3,7 @@
 @section('content')
 
 
-    @component('componentes.box', ['title' => 'Cadastrar acompanhamento', 'erro' =>1])
+    @component('componentes.box', ['title' => 'Cadastrar de Proteína', 'erro' =>1])
 
         @slot('action')
 
@@ -13,16 +13,14 @@
 
         @endslot
 
-        {{Form::open(['route' => ['enterprise.menu.accompanying.list.create', $id]])}}
+        {{Form::open(['route' => ['enterprise.menu.protein.list.create', $id]])}}
 
         <div class="form-group m-form__group row">
             <div class="col-lg-6">
 
-                <label for="">Acompanhamento</label>
-                {{Form::select('accompanying_id', $accompanyings, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
+                <label for="">Proteína</label>
+                {{Form::select('protein_id', $proteins, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
             </div>
-
-
         </div>
         <br>
         <div class="row">
@@ -38,7 +36,7 @@
 
     @endcomponent
 
-    @component('componentes.box', ['title' => 'Listagem de acompanhamentos', 'erro' =>0])
+    @component('componentes.box', ['title' => 'Listagem de proteínas', 'erro' =>0])
 
 
 
@@ -57,14 +55,14 @@
 
             <tbody>
 
-            @foreach($menuAccompanying as $accompanying)
+            @foreach($menuProtein as $protein)
                 <tr>
                     <td>
-                        <center>{{$accompanying->accompanying->name}}</center>
+                        <center>{{$protein->protein->name}}</center>
                     </td>
                     <td>
                         <center>
-                            {{Form::open(['route' => ['enterprise.menu.accompanying.list.delete', $accompanying->id]])}}
+                            {{Form::open(['route' => ['enterprise.menu.protein.list.delete', $protein->id]])}}
                             <button class="btn btn-danger" type="submit"><i class="flaticon-delete-1"
                                                                             aria-hidden="true"></i></button>
                             {{Form::close()}}
@@ -76,7 +74,7 @@
             </tbody>
 
         </table>
-        {{$menuAccompanying->appends(request()->all())->render()}}
+        {{$menuProtein->appends(request()->all())->render()}}
 
     @endcomponent
 

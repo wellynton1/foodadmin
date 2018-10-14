@@ -28,4 +28,9 @@ class MenuProtein extends Model
         'menu_id',
         'protein_id'
     ];
+
+    public function protein()
+    {
+        return $this->belongsTo(Protein::class);
+    }
 }

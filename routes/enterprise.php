@@ -29,9 +29,17 @@
 
         Route::prefix('acompanhamento')->group(function (){
 
-           Route::get('novo/{id}', 'MenuAccompanyingController@getList')->name('enterprise.menu.accompanying.list.get');
+           Route::get('lista/{id}', 'MenuAccompanyingController@getList')->name('enterprise.menu.accompanying.list.get');
            Route::post('novo/{id}', 'MenuAccompanyingController@postCreate')->name('enterprise.menu.accompanying.list.create');
            Route::post('delete/{id}', 'MenuAccompanyingController@postDelete')->name('enterprise.menu.accompanying.list.delete');
+
+        });
+
+        Route::prefix('proteina')->group(function (){
+
+           Route::get('lista/{id}', 'MenuProteinController@getList')->name('enterprise.menu.protein.list.get');
+           Route::post('novo/{id}', 'MenuProteinController@postCreate')->name('enterprise.menu.protein.list.create');
+           Route::post('delete/{id}', 'MenuProteinController@postDelete')->name('enterprise.menu.protein.list.delete');
 
         });
 

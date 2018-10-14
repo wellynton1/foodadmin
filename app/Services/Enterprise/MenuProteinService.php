@@ -29,4 +29,9 @@ class MenuProteinService
         return MenuProtein::query();
     }
 
+    public function delete($id)
+    {
+        return MenuProtein::find($id)->delete();
+    }
+
 }
