@@ -1,3 +1,11 @@
+window.Vue = require('vue');
+
+import Form from './utilities/Form'
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.min.css';
+import VueMask from 'v-mask'
+import VueSweetalert2 from 'vue-sweetalert2';
+
 
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
@@ -7,12 +15,19 @@ window.Popper = require('popper.js').default;
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
+Vue.use(VueSweetalert2);
+window.Form = Form;
+Vue.use(Loading);
+Vue.use(VueMask);
+
 
 try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
 } catch (e) {}
+
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -23,6 +38,11 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+window.Vue = require('vue');
+
+
+Vue.prototype.route_default = '/';
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

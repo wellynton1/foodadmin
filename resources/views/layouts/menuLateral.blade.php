@@ -78,6 +78,16 @@
                 </span>
             </a>
         </li>
+        <li class="m-menu__item " aria-haspopup="true">
+            <a href="{{route('enterprise.accompanying.list.get')}}" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-users"></i>
+                <span class="m-menu__link-title">
+                    <span class="m-menu__link-wrap">
+                        <span class="m-menu__link-text">Acompanhamentos</span>
+                    </span>
+                </span>
+            </a>
+        </li>
         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
             <a href="javascript:;" class="m-menu__link m-menu__toggle">
                 <i class="m-menu__link-icon flaticon-cart"></i>

@@ -76,3 +76,23 @@
 
     });
 
+    Route::prefix('acompanhamento')->group(function (){
+
+        Route::get('lista', 'AccompanyingController@getList')->name('enterprise.accompanying.list.get');
+        Route::get('novo', 'AccompanyingController@getCreate')->name('enterprise.accompanying.create.get');
+        Route::post('valida/insumo', 'AccompanyingController@validateFeedstock');
+        Route::post('novo', 'AccompanyingController@postCreate');
+        Route::post('deletar/insumo/{id}', 'AccompanyingController@postDeleteFeedstock')->name('enterprise.accompanying.feedstock.delete.post');
+        Route::post('adicionar/insumo/{id}', 'AccompanyingController@postAddFeedstock')->name('enterprise.accompanying.feedstock.adicionar.post');
+        Route::get('insumo/lista/{id}', 'AccompanyingController@getUpdateFeedstock')->name('enterprise.accompanying.feedstock.update.get');
+        Route::get('editar/{id}', 'AccompanyingController@getUpdateAccompanying')->name('enterprise.accompanying.update.get');
+        Route::post('editar/{id}', 'AccompanyingController@postUpdateAccompanying')->name('enterprise.accompanying.update.post');
+    });
+
+
+    Route::prefix('ajax')->group(function (){
+
+        Route::get('insumos', 'AjaxController@getFeedstockAjax');
+
+    });
+

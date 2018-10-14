@@ -20,7 +20,7 @@ class CreateAccompanyingFeedstocksTable extends Migration
             $table->unsignedInteger('feedstock_id');
             $table->foreign('feedstock_id')->references('id')->on('feedstocks');
             $table->decimal('amount', 15,2);
-            $table->decimal('cost_value', 15,2);
+//            $table->decimal('cost_value', 15,2);
             $table->timestamps();
         });
     }
