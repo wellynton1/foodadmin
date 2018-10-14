@@ -33,14 +33,24 @@
                             <span class="m-menu__link-text">Tipo de Cardápio</span>
                         </a>
                     </li>
+
                     <li class="m-menu__item " aria-haspopup="true">
-                        <a href="{{route('enterprise.menu.list.get')}}" class="m-menu__link ">
+                        <a href="{{route('enterprise.accompanying.list.get')}}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>
-                            <span class="m-menu__link-text">Cardápio</span>
+                            <span class="m-menu__link-text">Acompanhamentos</span>
                         </a>
                     </li>
+                    <li class="m-menu__item " aria-haspopup="true">
+                        <a href="{{route('enterprise.protein.list.get')}}" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">Proteínas</span>
+                        </a>
+                    </li>
+
                     <li class="m-menu__item " aria-haspopup="true">
                         <a href="{{route('enterprise.feedstock.list.get')}}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
@@ -79,11 +89,11 @@
             </a>
         </li>
         <li class="m-menu__item " aria-haspopup="true">
-            <a href="{{route('enterprise.accompanying.list.get')}}" class="m-menu__link ">
+            <a href="{{route('enterprise.menu.list.get')}}" class="m-menu__link ">
                 <i class="m-menu__link-icon flaticon-users"></i>
                 <span class="m-menu__link-title">
                     <span class="m-menu__link-wrap">
-                        <span class="m-menu__link-text">Acompanhamentos</span>
+                        <span class="m-menu__link-text">Cardápio</span>
                     </span>
                 </span>
             </a>
@@ -156,20 +166,20 @@
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     {{--<li class="m-menu__item " aria-haspopup="true">--}}
-                        {{--<a href="{{route('enterprise.typemenu.list.get')}}" class="m-menu__link ">--}}
-                            {{--<i class="m-menu__link-bullet m-menu__link-bullet--dot">--}}
-                                {{--<span></span>--}}
-                            {{--</i>--}}
-                            {{--<span class="m-menu__link-text">Novo Pedido</span>--}}
-                        {{--</a>--}}
+                    {{--<a href="{{route('enterprise.typemenu.list.get')}}" class="m-menu__link ">--}}
+                    {{--<i class="m-menu__link-bullet m-menu__link-bullet--dot">--}}
+                    {{--<span></span>--}}
+                    {{--</i>--}}
+                    {{--<span class="m-menu__link-text">Novo Pedido</span>--}}
+                    {{--</a>--}}
                     {{--</li>--}}
                     {{--<li class="m-menu__item " aria-haspopup="true">--}}
-                        {{--<a href="{{route('enterprise.menu.list.get')}}" class="m-menu__link ">--}}
-                            {{--<i class="m-menu__link-bullet m-menu__link-bullet--dot">--}}
-                                {{--<span></span>--}}
-                            {{--</i>--}}
-                            {{--<span class="m-menu__link-text">Pedidos Realizados</span>--}}
-                        {{--</a>--}}
+                    {{--<a href="{{route('enterprise.menu.list.get')}}" class="m-menu__link ">--}}
+                    {{--<i class="m-menu__link-bullet m-menu__link-bullet--dot">--}}
+                    {{--<span></span>--}}
+                    {{--</i>--}}
+                    {{--<span class="m-menu__link-text">Pedidos Realizados</span>--}}
+                    {{--</a>--}}
                     {{--</li>--}}
 
                 </ul>
