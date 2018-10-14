@@ -11,4 +11,4 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/accompanying/create.js', 'public/accompanying/js');
+mix.js('resources/assets/js/accompanying/create.js', 'public/js/accompanying');
