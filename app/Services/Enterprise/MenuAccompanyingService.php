@@ -29,4 +29,9 @@ class MenuAccompanyingService
         return MenuAccompanying::query();
     }
 
+    public function delete($id)
+    {
+        return MenuAccompanying::find($id)->delete();
+    }
+
 }

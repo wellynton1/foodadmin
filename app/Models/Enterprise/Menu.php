@@ -29,11 +29,11 @@ class Menu extends Model
         'name',
         'description',
         'value_caloric',
-        'id_type_menu',
-        'id_status_menu'
+        'type_menu_id',
+        'status_menu_id'
     ];
 
-    public function type()
+    public function typeMenu()
     {
         return $this->belongsTo(TypeMenu::class);
     }

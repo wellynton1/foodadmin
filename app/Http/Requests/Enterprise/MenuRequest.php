@@ -27,7 +27,8 @@ class MenuRequest extends FormRequest
             'name' => 'required',
             'description' => 'required',
             'value_caloric' => 'required|numeric',
-            'id_type_menu' => 'required',
+            'type_menu_id' => 'required',
+            'status_menu_id' => 'required',
         ];
     }
 
@@ -39,8 +40,8 @@ class MenuRequest extends FormRequest
             'description.required' => 'O campo descrição é obrigatório!',
             'value_caloric.required' => 'O campo valor calórico é obrigatório!',
             'value_caloric.numeric' => 'O campo valor calórico deve conter um valor numérico!',
-            'id_type_menu.required' => 'O campo tipo menu é obrigatório!',
-            'id_status_menu.required' => 'O campo status menu é obrigatório!',
+            'type_menu_id.required' => 'O campo tipo menu é obrigatório!',
+            'status_menu_id.required' => 'O campo status menu é obrigatório!',
 
         ];
     }

@@ -22,7 +22,7 @@
 
             <div class="col-lg-6">
                 <label for="">Status Cardápio</label>
-                {{Form::select('id_status_menu', $statusMenu, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
+                {{Form::select('status_menu_id', $statusMenu, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
 
             </div>
         </div>
@@ -36,7 +36,7 @@
 
             <div class="col-lg-6">
                 <label for="">Tipo Cardápio</label>
-                {{Form::select('id_type_menu', $typeMenus, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
+                {{Form::select('type_menu_id', $typeMenus, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
 
             </div>
         </div>

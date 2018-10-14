@@ -29,4 +29,9 @@ class MenuAccompanying extends Model
         'accompanying_id',
         'active',
     ];
+
+    public function accompanying()
+    {
+        return $this->belongsTo(Accompanying::class);
+    }
 }

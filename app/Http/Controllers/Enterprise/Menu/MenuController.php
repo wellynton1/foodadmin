@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Enterprise;
+namespace App\Http\Controllers\Enterprise\Menu;
 
 use App\Http\Requests\Enterprise\MenuRequest;
 use App\Models\Enterprise\Menu;

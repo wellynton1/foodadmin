@@ -15,13 +15,13 @@ class AlterTableMenuAddCollumValueTotalSaleAndValueTotalCost extends Migration
     {
         if(!Schema::hasColumn('menus', 'value_total_sale')) {
             Schema::table('menus', function (Blueprint $table) {
-                $table->decimal('value_total_sale', 15,2);
+                $table->decimal('value_total_sale', 15,2)->nullable();
             });
         }
 
         if(!Schema::hasColumn('menus', 'value_total_cost')) {
             Schema::table('menus', function (Blueprint $table) {
-                $table->decimal('value_total_cost', 15,2);
+                $table->decimal('value_total_cost', 15,2)->nullable();
             });
         }
     }

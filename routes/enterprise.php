@@ -19,13 +19,21 @@
 
     });
 
-    Route::prefix('cardapio')->group(function (){
+    Route::prefix('cardapio')->namespace('Menu')->group(function (){
 
         Route::get('novo', 'MenuController@getCreate')->name('enterprise.menu.create.get');
         Route::post('novo', 'MenuController@postCreate')->name('enterprise.menu.create.post');
         Route::get('lista', 'MenuController@getList')->name('enterprise.menu.list.get');
         Route::get('editar/{menu}', 'MenuController@getUpdate')->name('enterprise.menu.update.get');
         Route::post('editar/{menu}', 'MenuController@postUpdate')->name('enterprise.menu.update.post');
+
+        Route::prefix('acompanhamento')->group(function (){
+
+           Route::get('novo/{id}', 'MenuAccompanyingController@getList')->name('enterprise.menu.accompanying.list.get');
+           Route::post('novo/{id}', 'MenuAccompanyingController@postCreate')->name('enterprise.menu.accompanying.list.create');
+           Route::post('delete/{id}', 'MenuAccompanyingController@postDelete')->name('enterprise.menu.accompanying.list.delete');
+
+        });
 
     });
 
