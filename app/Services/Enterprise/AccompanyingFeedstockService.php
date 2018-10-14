@@ -15,13 +15,11 @@ class AccompanyingFeedstockService
 {
     public function create($request, $accompanying_id)
     {
-
-            AccompanyingFeedstock::create([
-                'accompanying_id' => $accompanying_id,
-                'feedstock_id' => $request['feedstock_id'],
-                'amount' => $request['amount']
-            ]);
-
+        AccompanyingFeedstock::create([
+            'accompanying_id' => $accompanying_id,
+            'feedstock_id' => $request['feedstock_id'],
+            'amount' => $request['amount']
+        ]);
     }
 
     public function update($id, $request)

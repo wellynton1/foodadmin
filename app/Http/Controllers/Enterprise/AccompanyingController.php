@@ -31,8 +31,8 @@ class AccompanyingController extends Controller
 
     public function validateFeedstock(Request $request)
     {
-        $this->validate($request, ['feedstockSelected' => 'required', 'amount' => 'required'],
-            ['feedstockSelected.required' => 'Selecione um insumo', 'amount.required' => 'O campo quantidade é obrigatório']);
+        $this->validate($request, ['feedstockSelected' => 'required', 'amount' => 'required|numeric'],
+            ['amount.numeric' => 'quantidade deve ser um número.','feedstockSelected.required' => 'Selecione um insumo', 'amount.required' => 'O campo quantidade é obrigatório']);
     }
 
     public function postCreate(AccompanyingRequest $request)

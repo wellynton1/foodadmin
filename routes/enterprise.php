@@ -89,6 +89,19 @@
         Route::post('editar/{id}', 'AccompanyingController@postUpdateAccompanying')->name('enterprise.accompanying.update.post');
     });
 
+    Route::prefix('proteina')->group(function (){
+
+        Route::get('lista', 'ProteinController@getList')->name('enterprise.protein.list.get');
+        Route::get('novo', 'ProteinController@getCreate')->name('enterprise.protein.create.get');
+        Route::post('valida/insumo', 'ProteinController@validateFeedstock');
+        Route::post('novo', 'ProteinController@postCreate');
+        Route::post('deletar/insumo/{id}', 'ProteinController@postDeleteFeedstock')->name('enterprise.protein.feedstock.delete.post');
+        Route::post('adicionar/insumo/{id}', 'ProteinController@postAddFeedstock')->name('enterprise.protein.feedstock.adicionar.post');
+        Route::get('insumo/lista/{id}', 'ProteinController@getUpdateFeedstock')->name('enterprise.protein.feedstock.update.get');
+        Route::get('editar/{id}', 'ProteinController@getUpdateProtein')->name('enterprise.protein.update.get');
+        Route::post('editar/{id}', 'ProteinController@postUpdateProtein')->name('enterprise.protein.update.post');
+    });
+
 
     Route::prefix('ajax')->group(function (){
 

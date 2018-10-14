@@ -3,17 +3,17 @@
 @section('content')
 
 
-    @component('componentes.box', ['title' => 'Cadastrar acompanhamento', 'erro' =>1])
+    @component('componentes.box', ['title' => 'Cadastrar proteína', 'erro' =>1])
 
         @slot('action')
 
-            <a class="btn white btn-outline btn blue-soft" href="{{route('enterprise.accompanying.list.get')}}">
+            <a class="btn white btn-outline btn blue-soft" href="{{route('enterprise.protein.list.get')}}">
                 &nbsp;Voltar
             </a>
 
         @endslot
 
-        {{Form::open(['route' => ['enterprise.accompanying.feedstock.adicionar.post', $id]])}}
+        {{Form::open(['route' => ['enterprise.protein.feedstock.adicionar.post', $id]])}}
 
         <div class="form-group m-form__group row">
                 <div class="col-lg-6">
@@ -76,20 +76,20 @@
 
             <tbody>
 
-            @foreach($accompanying_feedstocks as $accompanying)
+            @foreach($protein_feedstocks as $protein)
                 <tr>
                     <td>
-                        <center>{{$accompanying->feedstock->name}}</center>
+                        <center>{{$protein->feedstock->name}}</center>
                     </td>
                     <td>
-                        <center>{{$accompanying->feedstock->unitOfMeasurement->name}}</center>
+                        <center>{{$protein->feedstock->unitOfMeasurement->name}}</center>
                     </td>
                     <td>
-                        <center>{{$accompanying->amount}}</center>
+                        <center>{{$protein->amount}}</center>
                     </td>
                     <td>
                         <center>
-                            {{Form::open(['route' => ['enterprise.accompanying.feedstock.delete.post', $accompanying->id]])}}
+                            {{Form::open(['route' => ['enterprise.protein.feedstock.delete.post', $protein->id]])}}
                             <button class="btn btn-danger" type="submit"><i class="flaticon-edit"
                                                                             aria-hidden="true"></i></button>
                             {{Form::close()}}
@@ -101,7 +101,7 @@
             </tbody>
 
         </table>
-        {{$accompanying_feedstocks->appends(request()->all())->render()}}
+        {{$protein_feedstocks->appends(request()->all())->render()}}
 
     @endcomponent
 

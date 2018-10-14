@@ -11,4 +11,5 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/accompanying/create.js', 'public/js/accompanying');
+mix.js('resources/assets/js/accompanying/create.js', 'public/js/accompanying')
+   .js('resources/assets/js/protein/create.js', 'public/js/protein');
