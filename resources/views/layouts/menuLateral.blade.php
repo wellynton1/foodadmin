@@ -5,11 +5,11 @@
             <a href="" class="m-menu__link ">
                 <i class="m-menu__link-icon flaticon-line-graph"></i>
                 <span class="m-menu__link-title">
-										<span class="m-menu__link-wrap">
+                    <span class="m-menu__link-wrap">
 											<span class="m-menu__link-text">Home</span>
 
-										</span>
-									</span>
+                    </span>
+                </span>
             </a>
         </li>
         <li class="m-menu__section ">
@@ -90,7 +90,7 @@
         </li>
         <li class="m-menu__item " aria-haspopup="true">
             <a href="{{route('enterprise.menu.list.get')}}" class="m-menu__link ">
-                <i class="m-menu__link-icon flaticon-users"></i>
+                <i class="m-menu__link-icon flaticon-menu-1"></i>
                 <span class="m-menu__link-title">
                     <span class="m-menu__link-wrap">
                         <span class="m-menu__link-text">Cardápio</span>
@@ -108,7 +108,7 @@
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item " aria-haspopup="true">
-                        <a href="{{route('enterprise.typemenu.list.get')}}" class="m-menu__link ">
+                        <a href="{{route('enterprise.order.create.get')}}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                                 <span></span>
                             </i>

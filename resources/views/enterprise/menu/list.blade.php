@@ -49,6 +49,7 @@
                 <th><center>Nome</center></th>
                 <th><center>Tipo Cardápio</center></th>
                 <th><center>Valor Calórico</center></th>
+                <th><center>Valor Venda</center></th>
                 <th><center>Acompanhamentos</center></th>
                 <th><center>Proteínas</center></th>
                 <th><center>Editar</center></th>
@@ -62,6 +63,7 @@
                     <td><center>{{$menu->name}}</center></td>
                     <td><center>{{$menu->typeMenu->name}}</center></td>
                     <td><center>{{$menu->value_caloric}}</center></td>
+                    <td><center>{{$menu->value_total_sale}}</center></td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.menu.accompanying.list.get', $menu->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.menu.protein.list.get', $menu->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.menu.update.get', $menu->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>

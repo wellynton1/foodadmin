@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Customer\Customer;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -30,6 +31,11 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    public function customer()
+    {
+        return $this->hasOne(Customer::class);
     }
 
 }

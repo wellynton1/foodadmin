@@ -118,10 +118,19 @@
         Route::post('editar/{id}', 'ProteinController@postUpdateProtein')->name('enterprise.protein.update.post');
     });
 
+    Route::prefix('pedido')->namespace('Order')->group(function (){
+
+        Route::get('novo', 'OrderController@getCreate')->name('enterprise.order.create.get');
+
+    });
 
     Route::prefix('ajax')->group(function (){
 
-        Route::get('insumos', 'AjaxController@getFeedstockAjax');
+        Route::get('insumos', 'AjaxController@getFeedstockListAjax');
+        Route::get('clientes', 'AjaxController@getCustomerListAjax');
+        Route::get('cardapios', 'AjaxController@getMenuListAjax');
+        Route::get('acompanhamentos', 'AjaxController@getAccompanyingListAjax');
+        Route::get('proteinas', 'AjaxController@getProteinListAjax');
 
     });
 

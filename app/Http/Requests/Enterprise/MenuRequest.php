@@ -29,6 +29,7 @@ class MenuRequest extends FormRequest
             'value_caloric' => 'required|numeric',
             'type_menu_id' => 'required',
             'status_menu_id' => 'required',
+            'value_total_sale' => 'required'
         ];
     }
 
@@ -42,6 +43,7 @@ class MenuRequest extends FormRequest
             'value_caloric.numeric' => 'O campo valor calórico deve conter um valor numérico!',
             'type_menu_id.required' => 'O campo tipo menu é obrigatório!',
             'status_menu_id.required' => 'O campo status menu é obrigatório!',
+            'value_total_sale.required' => 'O campo valor total de venda é obrigatório!',
 
         ];
     }

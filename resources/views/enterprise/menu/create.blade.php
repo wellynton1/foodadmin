@@ -28,15 +28,21 @@
         </div>
 
         <div class="form-group m-form__group row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <label for="">Valor Calórico</label>
                 {{Form::text('value_caloric', null, array('class' => 'form-control'))}}
 
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <label for="">Tipo Cardápio</label>
                 {{Form::select('type_menu_id', $typeMenus, null, array('class' => 'form-control', 'placeholder' => 'Selecione'))}}
+
+            </div>
+
+            <div class="col-lg-4">
+                <label for="">Valor de Venda</label>
+                {{Form::text('value_total_sale', null, array('class' => 'form-control value_sale'))}}
 
             </div>
         </div>
@@ -64,5 +70,18 @@
 
 
     @endcomponent
+
+@endsection
+
+@section('js')
+
+    {{Html::script('scripts/jquery.maskMoney.js')}}
+
+    <script>
+        $(".value_sale").maskMoney({
+            decimal: ",",
+            thousands: "."
+        });
+    </script>
 
 @endsection
