@@ -1,10 +1,10 @@
-require('./../bootstrap')
+require('../../bootstrap')
 
-import {getAll as getAllFeedstock} from './../services/feedstockService'
+import FeedstockService from '../../services/feedstockService'
 
 new Vue({
 
-    el: '#protein',
+    el: '#accompanying',
 
     data: {
 
@@ -38,22 +38,22 @@ new Vue({
 
         onSubmit() {
 
-            this.beginPreload();
+           this.beginPreload();
 
             var self = this;
 
-            this.form.post(this.route_default + 'empresa/proteina/novo')
+            this.form.post(this.route_default + 'empresa/acompanhamento/novo')
                 .then(response => {
                     this.endPreloader();
                     self.$swal({
                         position: 'top-center',
                         type: 'success',
-                        title: 'Proteína cadastrada com sucesso!',
+                        title: 'Acompanhamento cadastrado com sucesso!',
                         showConfirmButton: true,
                     }).then((result) => {
                         if (result.value) {
 
-                            window.location.replace(self.route_default+'empresa/proteina/lista');
+                            window.location.replace(self.route_default+'empresa/acompanhamento/lista');
 
                         }
                     });
@@ -66,14 +66,14 @@ new Vue({
 
         validateFeedstock() {
             this.form.errors.clear();
-            this.form.post(this.route_default + 'empresa/proteina/valida/insumo')
+            this.form.post(this.route_default + 'empresa/acompanhamento/valida/insumo')
                 .then(this.addFeedstock.bind(this))
 
         },
 
         getFeedstock() {
 
-            return getAllFeedstock()
+           return FeedstockService.get()
                 .then(response => this.feedstocks = response.data);
 
         },
@@ -105,6 +105,16 @@ new Vue({
             this.form.feedstocks.splice(index, 1);
 
         },
+        //
+        // messageSucess(texto, type) {
+        //     this.$swal({
+        //         position: 'top-center',
+        //         type: type == 1 ? 'success' : 'danger',
+        //         title: texto,
+        //         showConfirmButton: false,
+        //         timer: 1500
+        //     });
+        // }
 
     },
 

@@ -121,6 +121,7 @@
     Route::prefix('pedido')->namespace('Order')->group(function (){
 
         Route::get('novo', 'OrderController@getCreate')->name('enterprise.order.create.get');
+        Route::post('novo', 'OrderController@postCreate')->name('enterprise.order.create.post');
 
     });
 

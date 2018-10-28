@@ -1,6 +1,9 @@
-import http from './../utilities/http'; // não precisa de .js
+import http from './../utilities/http';
 
 
-export const getAll = () => {
-    return http.get('/empresa/ajax/insumos');
-};
+
+export default {
+    get() {
+        return http.get('/empresa/ajax/insumos');
+    }
+}

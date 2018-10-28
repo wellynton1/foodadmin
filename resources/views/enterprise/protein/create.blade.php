@@ -132,6 +132,6 @@
 
 @section('js')
 
-    {{Html::script(mix('js/protein/create.js'))}}
+    {{Html::script(mix('js/enterprise/protein/create.js'))}}
 
 @endsection

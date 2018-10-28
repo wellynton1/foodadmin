@@ -5,6 +5,8 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.min.css';
 import VueMask from 'v-mask'
 import VueSweetalert2 from 'vue-sweetalert2';
+import vSelect from 'vue-select'
+import VeeValidate from 'vee-validate';
 
 
 window._ = require('lodash');
@@ -15,6 +17,9 @@ window.Popper = require('popper.js').default;
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
+
+Vue.use(VeeValidate);
+Vue.component('v-select', vSelect)
 Vue.use(VueSweetalert2);
 window.Form = Form;
 Vue.use(Loading);
