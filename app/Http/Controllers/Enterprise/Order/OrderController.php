@@ -29,9 +29,9 @@ class OrderController extends Controller
         DB::transaction(function () use($request){
 
             $request->merge(['status_order_id' => 1]);
-
             $order = $this->orderService->create($request
-                ->only('status_order_id','date_delivery', 'descount', 'customer_id', 'customer_address_id', 'delivery_schedule', 'value_total_sale', 'observation'));
+                ->only('status_order_id','date_delivery', 'descount', 'customer_id',
+                    'customer_address_id', 'delivery_schedule', 'value_total_sale', 'observation', 'value_order'));
 
             $request->merge(['order_id' => $order->id]);
 
@@ -49,6 +49,25 @@ class OrderController extends Controller
 
         });
 
+    }
 
+    public function getList(Request $request)
+    {
+
+        $orders = $this->orderService->get();
+
+        $orders = $orders->orderBy('id', 'ASC')
+            ->when($request->customer_id, function ($q) use ($request) {
+                $q->where('customer_id', $request->customer_id);
+            })
+            ->when($request->status_order_id, function ($q) use($request){
+                $q->where('status_order_id', $request->status_order_id);
+            })
+            ->when($request->id, function ($q) use($request){
+                $q->where('id', $request->id);
+            })
+            ->paginate();
+
+        return view('enterprise.order.list', compact('orders'));
     }
 }

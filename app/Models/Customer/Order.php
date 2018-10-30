@@ -3,7 +3,7 @@
 namespace App\Models\Customer;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 class Order extends Model
 {
 
@@ -22,6 +22,19 @@ class Order extends Model
         });
     }
 
+    public function getDateDeliveryAttribute($value)
+    {
+
+        return Carbon::parse($value)->format('d/m/Y');
+    }
+
+    public function setDateDeliveryAttribute($value)
+    {
+        $value = Carbon::createFromFormat('d/m/Y', $value);
+        $this->attributes['date_delivery'] = $value;
+
+    }
+
     protected $fillable = [
         'customer_id',
         'customer_address_id',
@@ -30,6 +43,19 @@ class Order extends Model
         'value_total_sale',
         'value_total_cost',
         'observation',
-        'descount'
+        'descount',
+        'date_delivery',
+        'value_order'
+
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function statusOrder()
+    {
+        return $this->belongsTo(StatusOrder::class);
+    }
 }

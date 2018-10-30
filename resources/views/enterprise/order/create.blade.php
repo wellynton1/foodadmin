@@ -195,7 +195,7 @@
 
                 <div class="col-lg-4">
                     <label for="">Desconto %</label>
-                    <select name="descount" class="form-control" v-model="form.discount">
+                    <select name="descount" class="form-control" v-model="form.descount">
                         <option value="0">0</option>
                         <option value="5">5</option>
                         <option value="10">10</option>

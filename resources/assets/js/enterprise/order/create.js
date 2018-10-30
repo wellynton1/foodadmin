@@ -39,9 +39,8 @@ new Vue({
             customer_id: '',
             customer_address_id: '',
             observation: '',
-            discount: '0',
+            descount: '0',
             value_total_sale: '',
-            descount: '',
             value_order: '',
             date_delivery: ''
         })
@@ -58,7 +57,7 @@ new Vue({
 
             }, 0);
 
-            var total = parseFloat(sum) - (parseFloat(sum) * parseInt(this.form.discount) / 100);
+            var total = parseFloat(sum) - (parseFloat(sum) * parseInt(this.form.descount) / 100);
 
             this.form.value_total_sale = total;
             this.form.value_order = parseFloat(sum);
@@ -87,12 +86,25 @@ new Vue({
         onsubmit() {
             this.beginPreload();
 
-           this.form.customer_id = this.customer.customer?this.customer.customer.id:'';
+            var self = this;
+            this.form.customer_id = this.customer.customer ? this.customer.customer.id : '';
             this.form.post(this.route_default + 'empresa/pedido/novo')
                 .then((response) => {
-                  this.endPreloader();
-                }).catch((error) => {
                     this.endPreloader();
+                    self.$swal({
+                        position: 'top-center',
+                        type: 'success',
+                        title: 'Pedido cadastrado com sucesso!',
+                        showConfirmButton: true,
+                    }).then((result) => {
+                        if (result.value) {
+
+                            window.location.replace(self.route_default + 'empresa/pedido/lista');
+
+                        }
+                    });
+                }).catch((error) => {
+                this.endPreloader();
                 $('html, body').animate({scrollTop: 0}, 'slow');
 
             });

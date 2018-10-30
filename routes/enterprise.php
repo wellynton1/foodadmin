@@ -122,7 +122,7 @@
 
         Route::get('novo', 'OrderController@getCreate')->name('enterprise.order.create.get');
         Route::post('novo', 'OrderController@postCreate')->name('enterprise.order.create.post');
-
+        Route::get('lista', 'OrderController@getList')->name('enterprise.order.list.get');
     });
 
     Route::prefix('ajax')->group(function (){
