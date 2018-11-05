@@ -48,6 +48,18 @@ class Menu extends Model
 
     }
 
+    public function menuAccompanying()
+    {
+        return $this->hasMany(MenuAccompanying::class);
+    }
+
+    public function menuProtein()
+    {
+        return $this->hasMany(MenuProtein::class);
+    }
+
+
+
 //    public function getValueTotalSaleAttribute($value)
 //    {
 //        $value = number_format((double)$value, 2, ',', '.');

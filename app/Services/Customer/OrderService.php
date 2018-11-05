@@ -27,4 +27,14 @@ class OrderService
     {
         return Order::query();
     }
+
+    public function getFeedstockSale($date)
+    {
+
+      $orders = Order::where('date_delivery', $date)->with('orderMenus')->get();
+
+
+      dd($orders);
+
+    }
 }

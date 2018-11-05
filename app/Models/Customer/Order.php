@@ -2,6 +2,7 @@
 
 namespace App\Models\Customer;
 
+use App\Models\Enterprise\OrderMenu;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 class Order extends Model
@@ -57,5 +58,10 @@ class Order extends Model
     public function statusOrder()
     {
         return $this->belongsTo(StatusOrder::class);
+    }
+
+    public function orderMenu()
+    {
+        return $this->hasMany(OrderMenu::class);
     }
 }

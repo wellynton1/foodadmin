@@ -28,4 +28,9 @@ class Protein extends Model
         'name',
         'calorific_value'
     ];
+
+    public function feedstock()
+    {
+        return $this->hasMany(ProteinFeedstock::class, 'protein_id', 'id');
+    }
 }

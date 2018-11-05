@@ -48,7 +48,8 @@ class AjaxController extends Controller
     {
         $menus = $this->menuService->get();
 
-        return response()->json($menus->where('name', 'like', '%'.$request->q.'%')->get());
+        return response()->json($menus->where('name', 'like', '%'.$request->q.'%')
+            ->with('menuAccompanying.accompanying.feedstock', 'menuProtein.protein.feedstock')->get());
     }
 
     public function getAccompanyingListAjax(Request $request)

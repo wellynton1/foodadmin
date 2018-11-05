@@ -31,6 +31,6 @@ class MenuProtein extends Model
 
     public function protein()
     {
-        return $this->belongsTo(Protein::class);
+        return $this->hasMany(Protein::class, 'id', 'protein_id');
     }
 }

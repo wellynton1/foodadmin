@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Enterprise\Order;
 
 use App\Http\Requests\Enterprise\OrderRequest;
 use App\Services\Customer\OrderService;
+use App\Services\Enterprise\OrderFeedstockService;
 use App\Services\Enterprise\OrderMenuService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,10 +13,12 @@ class OrderController extends Controller
 {
     private $orderService;
     private $orderMenuService;
-    public function __construct(OrderService $orderService, OrderMenuService $orderMenuService)
+    private $orderFeedstockService;
+    public function __construct(OrderFeedstockService $orderFeedstockService, OrderService $orderService, OrderMenuService $orderMenuService)
     {
       $this->orderService = $orderService;
       $this->orderMenuService = $orderMenuService;
+      $this->orderFeedstockService = $orderFeedstockService;
     }
 
     public function getCreate()
@@ -43,6 +46,7 @@ class OrderController extends Controller
 
                  $this->orderMenuService->create($request->only('order_id', 'menu_id'));
 
+                 $this->orderFeedstockService->create($request->menu_id, $order->id);
              }
 
             }

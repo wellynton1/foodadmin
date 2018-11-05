@@ -4,8 +4,9 @@ namespace App\Models\Enterprise;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Accompanying extends Model
+class OrderFeedstock extends Model
 {
+
     public static function boot()
     {
 
@@ -14,17 +15,20 @@ class Accompanying extends Model
         static::creating(function ($model) {
             $model->created_by = auth()->user()->id;
             $model->active = 1;
+            return true;
         });
 
-        static::updating(function ($model){
+        static::updating(function ($model) {
             $model->updated_by = auth()->user()->id;
+            return true;
         });
     }
 
-    protected $fillable = ['name', 'calorific_value'];
+    protected $table = 'order_feedstocks';
 
-    public function feedstock()
-    {
-        return $this->hasMany(AccompanyingFeedstock::class, 'accompanying_id', 'id');
-    }
+    protected $fillable = [
+        'order_id',
+        'feedstock_id',
+        'amount'
+    ];
 }

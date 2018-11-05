@@ -25,4 +25,11 @@ class OrderMenu extends Model
         'order_id',
         'menu_id',
     ];
+
+    public function menu(){
+
+        return $this->hasMany(Menu::class, 'id', 'menu_id');
+
+    }
+
 }
