@@ -125,6 +125,7 @@
         Route::get('lista', 'OrderController@getList')->name('enterprise.order.list.get');
     });
 
+
     Route::prefix('ajax')->group(function (){
 
         Route::get('insumos', 'AjaxController@getFeedstockListAjax');
@@ -134,4 +135,13 @@
         Route::get('proteinas', 'AjaxController@getProteinListAjax');
 
     });
+
+    Route::prefix('relatorios')->namespace('Reports')->group(function (){
+
+     Route::get('compras/a-fazer', 'Sale\SaleController@getSaleTodo')->name('enterprise.reports.sale.todo.get');
+     Route::get('compras/busca/a-fazer', 'Sale\SaleController@getFindSaleTodo')->name('enterprise.reports.sale.find.todo.get');
+     Route::get('compras/download/pdf/{date_delivery}', 'Sale\SaleController@getSaleTodoPdf')->name('enterprise.reports.sale.todo.pdf.get');
+
+    });
+
 

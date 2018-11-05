@@ -165,22 +165,15 @@
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
-                    {{--<li class="m-menu__item " aria-haspopup="true">--}}
-                    {{--<a href="{{route('enterprise.typemenu.list.get')}}" class="m-menu__link ">--}}
-                    {{--<i class="m-menu__link-bullet m-menu__link-bullet--dot">--}}
-                    {{--<span></span>--}}
-                    {{--</i>--}}
-                    {{--<span class="m-menu__link-text">Novo Pedido</span>--}}
-                    {{--</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="m-menu__item " aria-haspopup="true">--}}
-                    {{--<a href="{{route('enterprise.menu.list.get')}}" class="m-menu__link ">--}}
-                    {{--<i class="m-menu__link-bullet m-menu__link-bullet--dot">--}}
-                    {{--<span></span>--}}
-                    {{--</i>--}}
-                    {{--<span class="m-menu__link-text">Pedidos Realizados</span>--}}
-                    {{--</a>--}}
-                    {{--</li>--}}
+                    <li class="m-menu__item " aria-haspopup="true">
+                        <a href="{{route('enterprise.reports.sale.todo.get')}}" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                <span></span>
+                            </i>
+                            <span class="m-menu__link-text">Compras a fazer</span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </div>

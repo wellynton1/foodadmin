@@ -2,6 +2,7 @@
 
 namespace App\Models\Customer;
 
+use App\Models\Enterprise\OrderFeedstock;
 use App\Models\Enterprise\OrderMenu;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
@@ -63,5 +64,10 @@ class Order extends Model
     public function orderMenu()
     {
         return $this->hasMany(OrderMenu::class);
+    }
+
+    public function orderFeedstock()
+    {
+        return $this->hasMany(OrderFeedstock::class, 'order_id', 'id');
     }
 }

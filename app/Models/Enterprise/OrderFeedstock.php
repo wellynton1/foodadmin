@@ -31,4 +31,11 @@ class OrderFeedstock extends Model
         'feedstock_id',
         'amount'
     ];
+
+
+    public function feedstock()
+    {
+        return $this->belongsTo(Feedstock::class);
+    }
+
 }
