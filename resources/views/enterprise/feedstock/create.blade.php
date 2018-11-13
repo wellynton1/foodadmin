@@ -7,7 +7,7 @@
 
         @slot('action')
 
-            <a class="btn white btn-outline btn blue-soft" href="{{route('enterprise.menu.list.get')}}">
+            <a class="btn white btn-outline btn blue-soft" href="{{route('enterprise.feedstock.list.get')}}">
                 &nbsp;Voltar</a>
         @endslot
 

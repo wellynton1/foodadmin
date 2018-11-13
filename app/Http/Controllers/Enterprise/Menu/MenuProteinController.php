@@ -21,7 +21,7 @@ class MenuProteinController extends Controller
     {
         $proteins = $this->proteinService->get();
 
-        $proteins = $proteins->pluck('name', 'id');
+        $proteins = $proteins->orderBy('name')->pluck('name', 'id');
 
         $menuProtein = $this->menuProteinService->get();
 

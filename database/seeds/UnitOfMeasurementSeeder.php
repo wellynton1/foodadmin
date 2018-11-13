@@ -15,7 +15,8 @@ class UnitOfMeasurementSeeder extends Seeder
 
             1 => ['name' => 'Gramas', 'active' => 1, 'created_by' => 1],
             2 => ['name' => 'Mililitros', 'active' => 1, 'created_by' => 1],
-            3 => ['name' => 'Unidade', 'active' => 1, 'created_by' => 1]
+            3 => ['name' => 'Unidade', 'active' => 1, 'created_by' => 1],
+            4 => ['name' => 'Maço', 'active' => 1, 'created_by' => 1]
 
         ]);
     }

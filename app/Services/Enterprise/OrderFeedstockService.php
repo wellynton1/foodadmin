@@ -16,10 +16,12 @@ class OrderFeedstockService
 {
 
     private $menuAccompanyingService;
+    private $menuProteinService;
 
-    public function __construct(MenuAccompanyingService $menuAccompanyingService)
+    public function __construct(MenuAccompanyingService $menuAccompanyingService, MenuProteinService $menuProteinService)
     {
      $this->menuAccompanyingService = $menuAccompanyingService;
+     $this->menuProteinService = $menuProteinService;
     }
 
     public function create($idMenu, $idOrder)
@@ -27,11 +29,12 @@ class OrderFeedstockService
 
         $menus = $this->menuAccompanyingService->get();
 
-        $menus = $menus->with('acompanyingFeedstock')->where('menu_id', $idMenu)->get();
+        $menus = $menus->where('menu_id', $idMenu)->get();
+
 
        foreach ($menus as $menu){
 
-           foreach ($menu->acompanyingFeedstock as $accompanying)
+           foreach ($menu->accompanying->feedstock as $accompanying)
            {
                OrderFeedstock::create([
                    'order_id' =>  $idOrder,
@@ -42,7 +45,23 @@ class OrderFeedstockService
 
        }
 
-        // OrderFeedstock::create($request->all());
+       $proteins = $this->menuProteinService->get();
+
+     $proteinFeedstock =  $proteins->with('proteinFeedstock')->where('menu_id', $idMenu)->get();
+
+
+        foreach ($proteinFeedstock as $proteinMenu){
+
+            foreach ($proteinMenu->protein->feedstock as $protein)
+            {
+                OrderFeedstock::create([
+                    'order_id' =>  $idOrder,
+                    'feedstock_id' => $protein->feedstock_id,
+                    'amount' => $protein->amount
+                ]);
+            }
+
+        }
     }
 
     public function update($id, $request)

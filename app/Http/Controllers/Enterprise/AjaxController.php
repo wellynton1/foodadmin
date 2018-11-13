@@ -32,7 +32,7 @@ class AjaxController extends Controller
     {
         $feedstocks = $this->feedstockService->get();
 
-        return response()->json($feedstocks->with('unitOfMeasurement')->get());
+        return response()->json($feedstocks->with('unitOfMeasurement')->OrderBy('name')->get());
     }
 
     public function getCustomerListAjax(Request $request)

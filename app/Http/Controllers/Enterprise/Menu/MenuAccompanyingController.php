@@ -21,7 +21,7 @@ class MenuAccompanyingController extends Controller
     {
         $accompanyings = $this->accompanyingService->get();
 
-        $accompanyings = $accompanyings->pluck('name', 'id');
+        $accompanyings = $accompanyings->orderBy('name')->pluck('name', 'id');
 
         $menuAccompanying = $this->menuAccompanyingService->get();
 

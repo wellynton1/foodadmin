@@ -31,6 +31,11 @@ class MenuProtein extends Model
 
     public function protein()
     {
-        return $this->hasMany(Protein::class, 'id', 'protein_id');
+        return $this->hasOne(Protein::class, 'id', 'protein_id');
+    }
+
+    public function proteinFeedstock()
+    {
+        return $this->hasMany(ProteinFeedstock::class, 'protein_id', 'protein_id');
     }
 }

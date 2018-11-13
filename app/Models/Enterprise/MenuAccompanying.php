@@ -32,7 +32,7 @@ class MenuAccompanying extends Model
 
     public function accompanying()
     {
-        return $this->hasMany(Accompanying::class, 'id', 'accompanying_id');
+        return $this->hasOne(Accompanying::class, 'id', 'accompanying_id');
     }
 
     public function acompanyingFeedstock()

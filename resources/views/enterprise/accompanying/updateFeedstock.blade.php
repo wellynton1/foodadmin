@@ -3,7 +3,7 @@
 @section('content')
 
 
-    @component('componentes.box', ['title' => 'Cadastrar acompanhamento', 'erro' =>1])
+    @component('componentes.box', ['title' => 'Editar acompanhamento', 'erro' =>1])
 
         @slot('action')
 

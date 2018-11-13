@@ -42,7 +42,7 @@ class OrderController extends Controller
 
                 $request->merge(['menu_id' => $menu['id']]);
 
-             for($i = 0; $i<=$menu['amount']; $i++){
+             for($i = 0; $i<=($menu['amount']-1); $i++){
 
                  $this->orderMenuService->create($request->only('order_id', 'menu_id'));
 
