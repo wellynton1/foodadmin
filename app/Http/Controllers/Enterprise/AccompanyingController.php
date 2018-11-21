@@ -89,7 +89,7 @@ class AccompanyingController extends Controller
     {
         $feedstocks = $this->feedstockService->get();
 
-        $feedstocks = $feedstocks->with('unitOfMeasurement')->get();
+        $feedstocks = $feedstocks->with('unitOfMeasurement')->orderBy('name')->get();
 
         $accompanying_feedstocks = $this->accompanyingFeedstockService->get();
 
