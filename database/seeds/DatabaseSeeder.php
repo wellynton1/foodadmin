@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
          $this->call(UnitOfMeasurementSeeder::class);
          $this->call(StateSeeder::class);
          $this->call(CitySeeder::class);
+         $this->call(StatusOrderSeeder::class);
     }
 }
