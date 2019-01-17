@@ -45,6 +45,7 @@
             <tr>
                 <th><center>Número do Pedido</center></th>
                 <th><center>Cliente</center></th>
+                <td><center>Data de Entrega</center></td>
                 <td><center>Valor do Pedido</center></td>
                 <td><center>Desconto %</center></td>
                 <td><center>Valor Total do Pedido</center></td>
@@ -57,8 +58,8 @@
                 <tr>
                     <td><center>{{$order->id}}</center></td>
                     <td><center>{{$order->customer->user->name}}</center></td>
+                    <td><center>{{$order->date_delivery}}</center></td>
                     <td><center>{{number_format((double)$order->value_order, 2, ',', '.')}}</center></td>
-
                     <td><center>{{$order->descount}}</center></td>
                     <td><center>{{number_format((double)$order->value_total_sale, 2, ',', '.')}}</center></td>
                 </tr>
