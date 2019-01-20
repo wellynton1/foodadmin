@@ -1,6 +1,6 @@
 # AdminFood
 
-Projeto em desenvolvimento para gerenciamento de restaurantes, que trabalham sobre demanda, desenvovildo utilizando o framework laravel e vuejs.
+Projeto em desenvolvimento para gerenciamento de restaurantes, que trabalham sobre demanda, desenvovildo utilizando o framework laravel e vuejs, com o template metronic.
 
 
 # Configurações
@@ -17,7 +17,7 @@ Projeto em desenvolvimento para gerenciamento de restaurantes, que trabalham sob
 
 6 - php artisan serve 
 
-7 - npm run watch
+7 - npm run dev
 
   
   
