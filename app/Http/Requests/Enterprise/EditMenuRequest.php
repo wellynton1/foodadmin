@@ -4,7 +4,7 @@ namespace App\Http\Requests\Enterprise;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MenuRequest extends FormRequest
+class EditMenuRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,8 +30,7 @@ class MenuRequest extends FormRequest
             'type_menu_id' => 'required',
             'status_menu_id' => 'required',
             'value_total_sale' => 'required',
-            'accompanyings' => 'required',
-            'proteins' => 'required'
+
         ];
     }
 
@@ -46,8 +45,7 @@ class MenuRequest extends FormRequest
             'type_menu_id.required' => 'O campo tipo menu é obrigatório!',
             'status_menu_id.required' => 'O campo status menu é obrigatório!',
             'value_total_sale.required' => 'O campo valor total de venda é obrigatório!',
-            'accompanyings.required' => 'É necessário incluir ao menos um acompanhamento',
-            'proteins.required' => 'É necessário incluir ao menos uma proteína'
+
 
         ];
     }

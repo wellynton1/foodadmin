@@ -6,6 +6,8 @@ use App\Services\Enterprise\AccompanyingService;
 use App\Services\Enterprise\FeedstockService;
 use App\Services\Enterprise\MenuService;
 use App\Services\Enterprise\ProteinService;
+use App\Services\Enterprise\StatusMenuService;
+use App\Services\Enterprise\TypeMenuService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,15 +19,35 @@ class AjaxController extends Controller
     private $menuService;
     private $accompanyingService;
     private $proteinService;
+    private $typeMenuService;
+    private $statusMenuService;
     public function __construct(FeedstockService $feedstockService, UserService $userService,
                                 MenuService $menuService, AccompanyingService $accompanyingService,
-                                ProteinService $proteinService)
+                                ProteinService $proteinService,
+                                TypeMenuService $typeMenuService,
+                                StatusMenuService $statusMenuService)
     {
         $this->menuService = $menuService;
         $this->feedstockService = $feedstockService;
         $this->userService = $userService;
         $this->accompanyingService = $accompanyingService;
         $this->proteinService = $proteinService;
+        $this->typeMenuService = $typeMenuService;
+        $this->statusMenuService = $statusMenuService;
+    }
+
+    public function getStatusMenuAjax()
+    {
+        $statusMenu = $this->statusMenuService->get();
+
+        return response()->json($statusMenu->orderBy('name')->get());
+    }
+
+    public function getTypeMenuAjax()
+    {
+        $typeMeus = $this->typeMenuService->get();
+
+        return response()->json($typeMeus->orderBy('name')->get());
     }
 
     public function getFeedstockListAjax()

@@ -133,6 +133,8 @@
         Route::get('cardapios', 'AjaxController@getMenuListAjax');
         Route::get('acompanhamentos', 'AjaxController@getAccompanyingListAjax');
         Route::get('proteinas', 'AjaxController@getProteinListAjax');
+        Route::get('tipo-cardapio', 'AjaxController@getTypeMenuAjax');
+        Route::get('status-cardapio', 'AjaxController@getStatusMenuAjax');
 
     });
 

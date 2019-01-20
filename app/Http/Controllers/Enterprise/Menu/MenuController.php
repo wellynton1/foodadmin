@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Enterprise\Menu;
 
+use App\Http\Requests\Enterprise\EditMenuRequest;
 use App\Http\Requests\Enterprise\MenuRequest;
 use App\Models\Enterprise\Menu;
+use App\Services\Enterprise\MenuAccompanyingService;
+use App\Services\Enterprise\MenuProteinService;
 use App\Services\Enterprise\MenuService;
 use App\Services\Enterprise\StatusMenuService;
 use App\Services\Enterprise\TypeMenuService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
 class MenuController extends Controller
 {
     private $typeMenuService;
@@ -18,13 +21,19 @@ class MenuController extends Controller
 
     private $statusMenuService;
 
-    public function __construct(TypeMenuService $typeMenuService, MenuService $menuService, StatusMenuService $statusMenuService)
+    private $menuProteinService;
+
+    private $menuAccompanyingService;
+
+
+    public function __construct(MenuProteinService $menuProteinService, MenuAccompanyingService $menuAccompanyingService, TypeMenuService $typeMenuService,
+                                MenuService $menuService, StatusMenuService $statusMenuService)
     {
         $this->typeMenuService = $typeMenuService;
-
         $this->menuService = $menuService;
-
         $this->statusMenuService = $statusMenuService;
+        $this->menuProteinService = $menuProteinService;
+        $this->menuAccompanyingService = $menuAccompanyingService;
     }
 
     public function getCreate()
@@ -41,10 +50,32 @@ class MenuController extends Controller
     public function postCreate(MenuRequest $request)
     {
 
-        $this->menuService->create($request);
+        DB::transaction(function () use($request) {
 
-        return redirect()->route('enterprise.menu.list.get')->with(['status' => 'Cardápio cadastrado com sucesso!']);
+            $id_menu =  $this->menuService->create($request);
 
+            $request->merge(['menu_id' => $id_menu->id]);
+
+            foreach ($request->accompanyings as $accompanying){
+
+                $request->merge(['accompanying_id' => $accompanying['accompanying_id']]);
+
+                $this->menuAccompanyingService->create($request);
+
+            }
+
+            foreach ($request->proteins as $protein){
+
+                $request->merge(['protein_id' => $protein['protein_id']]);
+
+                $this->menuProteinService->create($request);
+
+            }
+
+        });
+
+
+        return 1;
     }
 
     public function getUpdate(Menu $menu)
@@ -60,7 +91,7 @@ class MenuController extends Controller
     }
 
 
-    public function postUpdate(Menu $menu, MenuRequest $request)
+    public function postUpdate(Menu $menu, EditMenuRequest $request)
     {
 
         $this->menuService->update($menu->id, $request);

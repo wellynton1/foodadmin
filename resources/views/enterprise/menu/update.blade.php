@@ -78,8 +78,9 @@
 
     <script>
         $(".value_sale").maskMoney({
-            decimal: ",",
-            thousands: "."
+            precision: 2,
+            decimal:',',
+            thousands:'.'
         });
     </script>
 
