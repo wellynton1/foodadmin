@@ -79,9 +79,9 @@
                                     <span></span>
                                 </label>
                             </div>
-                            <div class="col m--align-right m-login__form-right">
-                                <a href="javascript:;" id="m_login_forget_password" class="m-link">Forget Password ?</a>
-                            </div>
+                            {{--<div class="col m--align-right m-login__form-right">--}}
+                                {{--<a href="javascript:;" id="m_login_forget_password" class="m-link">Forget Password ?</a>--}}
+                            {{--</div>--}}
                         </div>
                         <div class="m-login__form-action">
                             <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn">Login</button>
@@ -137,12 +137,12 @@
                         </div>
                     </form>
                 </div>
-                <div class="m-login__account">
-							<span class="m-login__account-msg">
-								Don't have an account yet ?
-							</span>&nbsp;&nbsp;
-                    <a href="javascript:;" id="m_login_signup" class="m-link m-link--light m-login__account-link">Sign Up</a>
-                </div>
+                {{--<div class="m-login__account">--}}
+							{{--<span class="m-login__account-msg">--}}
+								{{--Don't have an account yet ?--}}
+							{{--</span>&nbsp;&nbsp;--}}
+                    {{--<a href="javascript:;" id="m_login_signup" class="m-link m-link--light m-login__account-link">Sign Up</a>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
