@@ -14,7 +14,7 @@
 
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('login', 'LoginController@postLogin')->name('login.post');
-Route::get('logout', 'LoginController@getLogout');
+Route::get('logout', 'LoginController@getLogout')->name('logout.get');
 
 Route::middleware('auth')->group(function (){
 
