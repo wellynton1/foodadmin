@@ -63,7 +63,11 @@
                     <td><center>{{$menu->name}}</center></td>
                     <td><center>{{$menu->typeMenu->name}}</center></td>
                     <td><center>{{$menu->value_caloric}}</center></td>
-                    <td><center>{{$menu->value_total_sale}}</center></td>
+                    <td>
+                        <center>
+                            {{number_format((float)$menu->value_total_sale, 2, ',', '.')}}
+                        </center>
+                    </td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.menu.accompanying.list.get', $menu->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.menu.protein.list.get', $menu->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>
                     <td><center><a class="btn blue-soft" href="{{route('enterprise.menu.update.get', $menu->id)}}"><i class="flaticon-edit" aria-hidden="true"></i></a></center></td>
