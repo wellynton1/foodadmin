@@ -60,11 +60,11 @@ class Menu extends Model
 
 
 
-    public function getValueTotalSaleAttribute($value)
-    {
-        $value = number_format((double)$value, 2, ',', '.');
-        return $this->attributes['value_total_sale'] = $value;
-
-    }
+//    public function getValueTotalSaleAttribute($value)
+//    {
+//        $value = number_format((double)$value, 2, ',', '.');
+//        return $this->attributes['value_total_sale'] = $value;
+//
+//    }
 
 }
